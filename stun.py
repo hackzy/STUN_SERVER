@@ -6,10 +6,10 @@ import struct
 BINDING_REQUEST = 0x0001
 BINDING_RESPONSE = 0x0101
 MAGIC_COOKIE = 0x2112A442
-
+PORT = 5000
 def handle_udp():
     udp_socket = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-    udp_socket.bind(('0.0.0.0', 5000))
+    udp_socket.bind(('0.0.0.0', PORT))
     print("STUN UDP服务器正在运行，监听端口5000")
 
     while True:
@@ -60,7 +60,7 @@ def handle_tcp(client_socket, addr):
 
 def start_tcp_server():
     tcp_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    tcp_socket.bind(('0.0.0.0', 5000))
+    tcp_socket.bind(('0.0.0.0', PORT))
     tcp_socket.listen(5)
     print("STUN TCP服务器正在运行，监听端口5000")
 
