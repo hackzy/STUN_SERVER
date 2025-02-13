@@ -21,7 +21,7 @@
 ## 依赖
 
 - Python 版本：`3.x`
-- 相关库：`socket`, `asyncio`
+- 相关库：`socket`, `threading`,`struct`
 
 ## 更多
 
